@@ -8,4 +8,7 @@ export default createGlobalStyle`
   p,h1,h2,h3,h4,h5,h6{
     color:${({ theme }) => theme.text}
   }
+  .container{
+    margin: 0 auto;
+  }
 `

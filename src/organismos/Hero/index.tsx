@@ -4,7 +4,7 @@ import Heading from '../../moleculas/Heading'
 import Text from '../../moleculas/Text'
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   gap: 40px;
   .color {
@@ -20,7 +20,7 @@ const Container = styled.div`
     z-index: 1;
   }
   .information-hero {
-    margin-top: 150px;
+    margin-top: 200px;
     h1 {
       font-weight: bold;
       font-size: 48px;
@@ -37,15 +37,17 @@ const Container = styled.div`
 
 const Hero: React.FC = () => {
   return (
-    <Container className="relative grid grid-cols-12">
-      <div className="color absolute inset-x-0" />
-      <div className="background absolute inset-x-0" />
-      <div className="col-start-4 col-end-10 text-center information-hero">
-        <Heading level="1">Food delivery in Kovel</Heading>
-        <Text>
-          If you decide to relax or have unexpected guests, call us. We make
-          sure that your vacation is comfortable, enjoyable and delicious
-        </Text>
+    <Container className="relative">
+      <div className="container grid grid-cols-12">
+        <div className="color absolute inset-x-0" />
+        <div className="background absolute inset-x-0" />
+        <div className="col-start-4 col-end-10 text-center information-hero">
+          <Heading level="1">Food delivery in Kovel</Heading>
+          <Text>
+            If you decide to relax or have unexpected guests, call us. We make
+            sure that your vacation is comfortable, enjoyable and delicious
+          </Text>
+        </div>
       </div>
     </Container>
   )
