@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Link from '../../moleculas/Link'
 import Image from 'next/image'
 import logo from '../../../public/logo.webp'
+import mixin from '../../styles/mixin'
 
 import styled from 'styled-components'
 import { useCallback } from 'react'
@@ -33,6 +34,18 @@ export const NavbarContainer = styled.nav`
       line-height: 20px;
     }
   }
+  .business_hours {
+    display: unset;
+    ${mixin.md`
+        display: none;
+    `}
+  }
+  .left-container {
+    display: inline-flex;
+    ${mixin.md`
+        display: none;
+    `}
+  }
 `
 
 const Navbar: React.FC = () => {
@@ -53,16 +66,18 @@ const Navbar: React.FC = () => {
   return (
     <NavbarContainer className={transparent ? 'transparent' : 'solid'}>
       <div className="container grid grid-cols-12 items-center">
-        <div className="left-container col-start-1 col-end-5">
+        <div className="left-container col-span-4">
           <Link href="/about">Sobre nós</Link>
           <Link href="/contact">Contato</Link>
         </div>
-        <div className="center-container col-start-5 col-end-9 justify-self-center">
+        <div className="center-container md:col-span-4 col-span-5 col-start-2 md:col-start-auto justify-self-center">
           <Image width={112} height={67} src={logo} alt="logo" />
         </div>
-        <div className="right-container col-start-10 col-end-13 justify-self-end">
-          <Link href="/about">Daily 11am - 9pm</Link>
-          <Link href="/contact">0 800 33 08 98</Link>
+        <div className="right-container md:col-span-4 col-span-5 md:justify-self-end justify-center">
+          <Link className="business_hours" href="/about">
+            Daily 11am - 9pm
+          </Link>
+          <Link href="tel:+55130800330898">0 800 33 08 98</Link>
         </div>
       </div>
     </NavbarContainer>

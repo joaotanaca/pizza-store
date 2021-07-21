@@ -1,6 +1,7 @@
 # Changelog
 
 <a name="0.1.0"></a>
+
 ## 0.1.0 (2021-07-21)
 
 ### Fixed
@@ -9,10 +10,10 @@
 
 ### Miscellaneous
 
+- 🔨 add author in generate changelog [[5d39792](https://github.com/joaotanaca/pizza-store/commit/5d3979264ba09d2d35a427028a0048334e8635f4)] (by Tanaca)
 - 📝 CHANGELOG [[20b660b](https://github.com/joaotanaca/pizza-store/commit/20b660b5dc42a6a1b40aaca677d23fef0dfe2677)] (by Tanaca)
--  Merge branch &#x27;develop&#x27; of github.com:joaotanaca/pizza-store into develop [[4aafa0d](https://github.com/joaotanaca/pizza-store/commit/4aafa0d8e9a2213654060ccfa47e9f5a3755a637)] (by Tanaca)
--  Create changelog.md [[4d7dfec](https://github.com/joaotanaca/pizza-store/commit/4d7dfec661b95e136c9bb0bc6bc3069d8db02ea7)] (by João Tanaca)
-
+- Merge branch &#x27;develop&#x27; of github.com:joaotanaca/pizza-store into develop [[4aafa0d](https://github.com/joaotanaca/pizza-store/commit/4aafa0d8e9a2213654060ccfa47e9f5a3755a637)] (by Tanaca)
+- Create changelog.md [[4d7dfec](https://github.com/joaotanaca/pizza-store/commit/4d7dfec661b95e136c9bb0bc6bc3069d8db02ea7)] (by João Tanaca)
 
 <a name="0.0.1"></a>
 
