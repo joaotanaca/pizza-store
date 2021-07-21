@@ -10,7 +10,7 @@
     "lint": "next lint --fix && yarn prettier -w .",
     "precommit": "yarn lint",
     "prepush": "yarn lint",
-    "changelog": "gitmoji-changelog"
+    "changelog": "gitmoji-changelog --author"
   },
   "dependencies": {
     "framer-motion": "^4.1.17",
