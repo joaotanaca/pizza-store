@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint --fix && yarn prettier -w .",
     "precommit": "yarn lint",
-    "prepush": "yarn lint"
+    "prepush": "yarn lint",
+    "changelog": "gitmoji-changelog"
   },
   "dependencies": {
     "framer-motion": "^4.1.17",
@@ -27,6 +28,7 @@
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "gitmoji-changelog": "^2.2.1",
     "husky": "^7.0.1",
     "postcss": "^8.3.5",
     "prettier": "^2.3.2",
