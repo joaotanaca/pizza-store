@@ -1,6 +1,7 @@
 # Changelog
 
 <a name="next"></a>
+
 ## next
 
 ### Added
@@ -25,7 +26,6 @@
 ### Miscellaneous
 
 - 📦 add lib swr [[e10af03](https://github.com/joaotanaca/pizza-store/commit/e10af0378df640ecee4c32afd70d2c56f7c93596)] (by Tanaca)
-
 
 <a name="0.1.0"></a>
 

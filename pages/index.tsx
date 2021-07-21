@@ -1,19 +1,13 @@
-import useSWR from 'swr'
-import Pill from '../src/moleculas/Pill'
-import Hero from '../src/organismos/Hero'
-import Navbar from '../src/organismos/Navbar'
+import CategoriesBar from '../src/components/moleculas/CategoriesBar'
+import Hero from '../src/components/organismos/Hero'
+import Navbar from '../src/components/organismos/Navbar'
 
 export default function Home() {
-  const { data, error } = useSWR('/api/categories', { initialData: [] })
   return (
     <>
       <Navbar />
       <Hero />
-      {data?.map((category: string) => (
-        <Pill id={category.toLowerCase()} key={category} active={false}>
-          {category}
-        </Pill>
-      ))}
+      <CategoriesBar />
     </>
   )
 }
