@@ -90,10 +90,10 @@ const Navbar: React.FC = () => {
           <Link href="/about">Sobre nós</Link>
           <Link href="/contact">Contato</Link>
         </div>
-        <div className="center-container md:col-span-4 col-span-4 col-start-2 md:col-start-auto justify-self-start">
+        <div className="center-container md:col-span-4 col-span-4 col-start-2 md:col-start-auto justify-self-start md:justify-self-center">
           <img width={112} height={67} src="/logo.webp" alt="logo" />
         </div>
-        <div className="right-container md:col-span-4 col-span-6 justify-self-end">
+        <div className="right-container md:col-span-4 col-span-6 justify-self-end md:justify-self-center">
           <Link className="business_hours" href="/about">
             Daily 11am - 9pm
           </Link>
