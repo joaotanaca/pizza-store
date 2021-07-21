@@ -13,7 +13,6 @@
     "changelog": "gitmoji-changelog --author"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "framer-motion": "^4.1.17",
     "next": "11.0.1",
     "react": "17.0.2",
@@ -23,7 +22,6 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/react": "17.0.14",
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
