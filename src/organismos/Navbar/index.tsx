@@ -1,12 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import Link from '../../moleculas/Link'
 import Image from 'next/image'
-import logo from '../../../public/logo.webp'
-import mixin from '../../styles/mixin'
-
 import styled from 'styled-components'
 import { useCallback } from 'react'
+
+import Phone from '../../../public/phone.svg'
+import mixin from '../../styles/mixin'
+import Link from '../../moleculas/Link'
 
 export const NavbarContainer = styled.nav`
   position: fixed;
@@ -34,14 +35,33 @@ export const NavbarContainer = styled.nav`
       line-height: 20px;
     }
   }
-  .business_hours {
-    display: unset;
+  .right-container {
+    .phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      img {
+        margin-top: 2.5px !important;
+      }
+      ${mixin.md`
+        font-size: 16px;
+      `}
+    }
+  }
+  .center-container {
     ${mixin.md`
-        display: none;
+      img{
+        width: 100%;
+        height: 50px;
+      }
     `}
   }
-  .left-container {
+  .left-container,
+  .business_hours {
     display: inline-flex;
+    align-items: center;
     ${mixin.md`
         display: none;
     `}
@@ -70,14 +90,17 @@ const Navbar: React.FC = () => {
           <Link href="/about">Sobre nós</Link>
           <Link href="/contact">Contato</Link>
         </div>
-        <div className="center-container md:col-span-4 col-span-5 col-start-2 md:col-start-auto justify-self-center">
-          <Image width={112} height={67} src={logo} alt="logo" />
+        <div className="center-container md:col-span-4 col-span-4 col-start-2 md:col-start-auto justify-self-start">
+          <img width={112} height={67} src="/logo.webp" alt="logo" />
         </div>
-        <div className="right-container md:col-span-4 col-span-5 md:justify-self-end justify-center">
+        <div className="right-container md:col-span-4 col-span-6 justify-self-end">
           <Link className="business_hours" href="/about">
             Daily 11am - 9pm
           </Link>
-          <Link href="tel:+55130800330898">0 800 33 08 98</Link>
+          <Link className="phone" href="tel:+55130800330898">
+            <Image width={49} height={40} src={Phone} alt="phone" /> 0 800 33 08
+            98
+          </Link>
         </div>
       </div>
     </NavbarContainer>
