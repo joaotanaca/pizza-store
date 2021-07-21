@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Heading from '../../moleculas/Heading'
-import Text from '../../moleculas/Text'
-import mixin from '../../styles/mixin'
+import Heading from '../../atomos/Heading'
+import Text from '../../atomos/Text'
+import mixin from '../../../styles/mixin'
 
 const Container = styled.div`
   width: 100%;

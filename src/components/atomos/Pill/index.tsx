@@ -13,6 +13,7 @@ const PillContainer = styled.a`
   padding: 17px 40px;
   font-weight: 600;
   font-size: 16px;
+  text-align: center;
   &:target,
   &.active {
     background-color: ${(props) => props.theme.secondary};
@@ -24,7 +25,7 @@ const Pill: React.FC<TProps> = ({ children, active, className, ...props }) => {
   return (
     <PillContainer
       href={`#${props.id}`}
-      className={`${className}${active && 'active'}`}
+      className={`${className ?? ''}${active ? 'active' : ''}`}
       {...props}
     >
       {children}

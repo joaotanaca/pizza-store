@@ -5,9 +5,9 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { useCallback } from 'react'
 
-import Phone from '../../../public/phone.svg'
-import mixin from '../../styles/mixin'
-import Link from '../../moleculas/Link'
+import Phone from '../../../../public/phone.svg'
+import mixin from '../../../styles/mixin'
+import Link from '../../atomos/Link'
 
 export const NavbarContainer = styled.nav`
   position: fixed;

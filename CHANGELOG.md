@@ -1,5 +1,32 @@
 # Changelog
 
+<a name="next"></a>
+## next
+
+### Added
+
+- ✨ created api endpoint for categories [[75ea2b1](https://github.com/joaotanaca/pizza-store/commit/75ea2b1ee13a9ed02d09fde45c43ba52a4b04fc1)] (by Tanaca)
+- ➕ add react-icons [[bc8334d](https://github.com/joaotanaca/pizza-store/commit/bc8334d87f12606b58bba3b932c7006a74905dbf)] (by Tanaca)
+
+### Changed
+
+- 💄 create pill component [[0276719](https://github.com/joaotanaca/pizza-store/commit/0276719342e3615ef504a6fa1796a40eebc7222d)] (by Tanaca)
+- 📱 responsive hero [[0add590](https://github.com/joaotanaca/pizza-store/commit/0add590612f4adcf563e492a7a32f368ec9233c1)] (by Tanaca)
+
+### Removed
+
+- ➖ remove axios [[e3a6d55](https://github.com/joaotanaca/pizza-store/commit/e3a6d554a127bc27261faa4eca323c140b7d6d96)] (by Tanaca)
+
+### Fixed
+
+- 🐛 fix position logo in navbar [[296c4de](https://github.com/joaotanaca/pizza-store/commit/296c4de1abe55c4325e0c75f6dc84db59d571163)] (by Tanaca)
+- 💚 fix build tailwind [[44b87ed](https://github.com/joaotanaca/pizza-store/commit/44b87ed840dd18e9181200279413bebeeedea257)] (by Tanaca)
+
+### Miscellaneous
+
+- 📦 add lib swr [[e10af03](https://github.com/joaotanaca/pizza-store/commit/e10af0378df640ecee4c32afd70d2c56f7c93596)] (by Tanaca)
+
+
 <a name="0.1.0"></a>
 
 ## 0.1.0 (2021-07-21)
