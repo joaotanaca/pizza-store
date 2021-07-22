@@ -6,11 +6,20 @@
 
 ### Added
 
+- ✨ pizza route api [[0320b91](https://github.com/joaotanaca/pizza-store/commit/0320b91b588dab1a21c0a5e9b5c6bf5592082276)] (by Tanaca)
 - ✨ created api endpoint for categories [[75ea2b1](https://github.com/joaotanaca/pizza-store/commit/75ea2b1ee13a9ed02d09fde45c43ba52a4b04fc1)] (by Tanaca)
 - ➕ add react-icons [[bc8334d](https://github.com/joaotanaca/pizza-store/commit/bc8334d87f12606b58bba3b932c7006a74905dbf)] (by Tanaca)
 
 ### Changed
 
+- 📱 🐛 fix reponsive layout [[20e4c9a](https://github.com/joaotanaca/pizza-store/commit/20e4c9a3c920e346db7ae545e87d969a3d1262c9)] (by Tanaca)
+- 💬 🚚 add two data in pizza route api [[6d57bf8](https://github.com/joaotanaca/pizza-store/commit/6d57bf8c6cdf79bc58bef42d8bfb70ba33da1967)] (by Tanaca)
+- 📱 💄 responsive layout for SaleCards [[e690e25](https://github.com/joaotanaca/pizza-store/commit/e690e25a2cd137d5aab462b75b2d4dcf2e225606)] (by Tanaca)
+- 🍱 💄 create SaleCard component [[b3c760d](https://github.com/joaotanaca/pizza-store/commit/b3c760d6ae166027ffaa6c9bc0b9136fdac3d785)] (by Tanaca)
+- 📱 💄 starting to develop the component SaleContent card [[eeb6c4f](https://github.com/joaotanaca/pizza-store/commit/eeb6c4f3cde35bcc15fcacef193a961a37fdd2fb)] (by Tanaca)
+- 💄 add padding to container class of tailwindcss [[be6d83b](https://github.com/joaotanaca/pizza-store/commit/be6d83b9668d6f893361a8ce5185915bd94ef50a)] (by Tanaca)
+- 💄 ✨ add hooks, CategorieBar components [[4c1cdd8](https://github.com/joaotanaca/pizza-store/commit/4c1cdd8db44b6ddc7a118463dbd42681dfeb7cd4)] (by Tanaca)
+- 🎨 add folder components, atomos and moleculas [[a124ce9](https://github.com/joaotanaca/pizza-store/commit/a124ce918ec5facb4386fead2640dc7feefbef99)] (by Tanaca)
 - 💄 create pill component [[0276719](https://github.com/joaotanaca/pizza-store/commit/0276719342e3615ef504a6fa1796a40eebc7222d)] (by Tanaca)
 - 📱 responsive hero [[0add590](https://github.com/joaotanaca/pizza-store/commit/0add590612f4adcf563e492a7a32f368ec9233c1)] (by Tanaca)
 
@@ -25,6 +34,7 @@
 
 ### Miscellaneous
 
+- 💫 💄 add transition to Navbar [[30fbb88](https://github.com/joaotanaca/pizza-store/commit/30fbb881d3733fa6c28442e0941483be1c71d230)] (by Tanaca)
 - 📦 add lib swr [[e10af03](https://github.com/joaotanaca/pizza-store/commit/e10af0378df640ecee4c32afd70d2c56f7c93596)] (by Tanaca)
 
 <a name="0.1.0"></a>
