@@ -15,15 +15,16 @@ export const NavbarContainer = styled.nav`
   left: 0;
   width: 100%;
   z-index: 100;
-
+  transition: background-color 0.3s linear;
   &.solid {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.96);
   }
   &.transparent {
     background-color: transparent;
   }
   .container {
-    padding: 12.5px 0;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
   }
   .left-container,
   .right-container {
@@ -51,12 +52,12 @@ export const NavbarContainer = styled.nav`
     }
   }
   .center-container {
-    ${mixin.md`
-      img{
+    img {
+      ${mixin.md`
         width: 100%;
         height: 50px;
-      }
     `}
+    }
   }
   .left-container,
   .business_hours {
@@ -93,7 +94,7 @@ const Navbar: React.FC = () => {
         <div className="center-container md:col-span-4 col-span-4 col-start-2 md:col-start-auto justify-self-start md:justify-self-center">
           <img width={112} height={67} src="/logo.webp" alt="logo" />
         </div>
-        <div className="right-container md:col-span-4 col-span-6 justify-self-end md:justify-self-center">
+        <div className="right-container md:col-span-4 col-span-6 justify-self-end">
           <Link className="business_hours" href="/about">
             Daily 11am - 9pm
           </Link>
