@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Heading from '../../atomos/Heading'
 import CategoriesBar from '../../moleculas/CategoriesBar'
-import SaleCard from '../../moleculas/SaleCard'
+import SaleCards from '../../moleculas/SaleCards'
 
 const SaleContainer = styled.div`
   margin-top: 31px;
@@ -18,11 +18,14 @@ const SaleContainer = styled.div`
 const SaleContent: React.FC = () => {
   return (
     <SaleContainer className="container grid grid-cols-12">
-      <Heading level="2" className="col-start-5 col-span-4">
+      <Heading
+        level="2"
+        className="md:col-start-2 md:col-span-10 lg:col-start-5 lg:col-span-4 col-span-12"
+      >
         Popular dishes
       </Heading>
       <CategoriesBar />
-      <SaleCard />
+      <SaleCards />
     </SaleContainer>
   )
 }

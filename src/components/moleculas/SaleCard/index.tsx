@@ -4,31 +4,43 @@ import styled, { useTheme } from 'styled-components'
 import { FaShoppingBag } from 'react-icons/fa'
 
 import Text from '../../atomos/Text'
+import { TPizza } from '../../../../pages/api/pizza'
+import mixin from '../../../styles/mixin'
+import { motion } from 'framer-motion'
 
 const SaleCardContainer = styled.div`
-  width: 260px;
-  height: 400px;
+  width: calc(25% - 30px);
   border: 2px solid #eceef7;
   border-radius: 15px;
   background-color: #fff;
   margin-bottom: 40px;
+  ${mixin.lg`
+    width: calc(33% - 30px);
+  `}
+  ${mixin.md`
+    width: calc(50% - 30px);
+  `}
+  ${mixin.sm`
+    width: 100%;
+  `}
   img {
+    width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }
   .text-container {
-    padding: 15px 25px 20px;
+    padding: 15px 25px 0;
     display: flex;
     flex-flow: column;
     .title {
       font-weight: 600;
       font-size: 18px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .description {
       font-weight: normal;
       font-size: 13px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .price {
       text-align: center;
@@ -37,54 +49,58 @@ const SaleCardContainer = styled.div`
     }
   }
   .cart-container {
-    bottom: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 14px 14px;
-    background-color: #fff;
-    border-bottom-left-radius: 150%;
-    border-bottom-right-radius: 150%;
-    border-bottom: 4px solid #eceef7;
-    .cart-svg-container {
-      position: relative;
-      &:before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        width: calc(100% + 20px);
-        height: calc(100% + 20px);
-        border: 2px solid #eceef6;
-        background-color: #fff;
-        border-radius: 50%;
-        z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cart-button {
+      margin: 0 auto;
+      padding: 0 14px 14px;
+      background-color: #fff;
+      border-bottom-left-radius: 150%;
+      border-bottom-right-radius: 150%;
+      border-bottom: 4px solid #eceef7;
+      .cart-svg-container {
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          left: -8.57px;
+          width: calc(100% + 17px);
+          height: calc(100% + 17px);
+          border: 2px solid #eceef6;
+          background-color: #fff;
+          border-radius: 50%;
+          z-index: -1;
+        }
       }
     }
   }
 `
 
-const SaleCard: React.FC = () => {
+const SaleCard = ({ description, name, price }: TPizza) => {
   const { primary } = useTheme()
   return (
-    <SaleCardContainer className="relative">
+    <SaleCardContainer>
       <Image
-        src="https://img1.gratispng.com/20180525/euq/kisspng-chicago-style-pizza-pizza-ranch-pepperoni-ranch-dr-5b07ceddc243f6.9158448615272383657957.jpg"
+        src="/pizza.webp"
         alt="pizza"
         width={260}
         height={220}
+        layout="responsive"
       />
       <div className="text-container">
-        <Text className="title">Quattro formaggi</Text>
-        <Text className="description">
-          Dough, Mozzarella, Cheddar, Blue, Parmesan
-        </Text>
-        <Text className="price">119 UAH</Text>
+        <Text className="title">{name}</Text>
+        <Text className="description">{description}</Text>
+        <Text className="price">R$ {price}</Text>
       </div>
-      <button className="absolute cart-container">
-        <div className="cart-svg-container">
-          <FaShoppingBag size={24} color={primary} />
-        </div>
-      </button>
+      <div className="cart-container">
+        <motion.button className="cart-button" style={{ y: '40%' }}>
+          <div className="cart-svg-container">
+            <FaShoppingBag size={24} color={primary} />
+          </div>
+        </motion.button>
+      </div>
     </SaleCardContainer>
   )
 }
