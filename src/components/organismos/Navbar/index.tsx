@@ -46,14 +46,14 @@ export const NavbarContainer = styled.nav`
       img {
         margin-top: 2.5px !important;
       }
-      ${mixin.md`
+      ${mixin.lg`
         font-size: 16px;
       `}
     }
   }
   .center-container {
     img {
-      ${mixin.md`
+      ${mixin.lg`
         width: 100%;
         height: 50px;
     `}
@@ -63,7 +63,7 @@ export const NavbarContainer = styled.nav`
   .business_hours {
     display: inline-flex;
     align-items: center;
-    ${mixin.md`
+    ${mixin.lg`
         display: none;
     `}
   }
@@ -91,10 +91,10 @@ const Navbar: React.FC = () => {
           <Link href="/about">Sobre nós</Link>
           <Link href="/contact">Contato</Link>
         </div>
-        <div className="center-container md:col-span-4 col-span-4 col-start-2 md:col-start-auto justify-self-start md:justify-self-center">
-          <img width={112} height={67} src="/logo.webp" alt="logo" />
+        <div className="center-container lg:col-span-4 col-span-3 lg:col-start-auto justify-self-start lg:justify-self-center">
+          <Image width={112} height={67} src="/logo.webp" alt="logo" />
         </div>
-        <div className="right-container md:col-span-4 col-span-6 justify-self-end">
+        <div className="right-container md:col-span-4 col-span-9 justify-self-end">
           <Link className="business_hours" href="/about">
             Daily 11am - 9pm
           </Link>

@@ -35,7 +35,7 @@ const CategoriesBar: React.FC = () => {
     return <Text>Ocorreu um erro!</Text>
   }
   return (
-    <CategoriesContainer className="col-start-2 col-span-10 md:col-start-1 md:col-span-12 relative md:static">
+    <CategoriesContainer className="col-start-2 col-span-10 lg:col-start-1 lg:col-span-12 relative md:static">
       <div className="absolute md:static">
         {data?.map((category: string) => (
           <Pill id={category.toLowerCase()} key={category} active={false}>
