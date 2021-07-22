@@ -43,6 +43,16 @@ export default function handler(
           description: 'Dough, Mozzarella, Cheddar, Blue, Parmesan',
           price: '119',
         },
+        {
+          name: 'Кватро формаджіо',
+          description: 'Dough, Mozzarella, Cheddar, Blue, Parmesan',
+          price: '119',
+        },
+        {
+          name: 'Кватро формаджіо',
+          description: 'Dough, Mozzarella, Cheddar, Blue, Parmesan',
+          price: '119',
+        },
       ])
     default:
       return res.status(405).json({ error: 'Method not allowed' })
