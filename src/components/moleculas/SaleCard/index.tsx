@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styled, { useTheme } from 'styled-components'
-import { FaShoppingBag } from 'react-icons/fa'
+import { FaCartPlus } from 'react-icons/fa'
 
 import Text from '../../atomos/Text'
 import { TPizza } from '../../../../pages/api/pizza'
@@ -97,7 +97,7 @@ const SaleCard = ({ description, name, price }: TPizza) => {
       <div className="cart-container">
         <motion.button className="cart-button" style={{ y: '40%' }}>
           <div className="cart-svg-container">
-            <FaShoppingBag size={24} color={primary} />
+            <FaCartPlus size={24} color={primary} />
           </div>
         </motion.button>
       </div>

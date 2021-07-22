@@ -1,10 +1,12 @@
-import React from 'react'
+import { motion } from 'framer-motion'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import Heading from '../../atomos/Heading'
 import CategoriesBar from '../../moleculas/CategoriesBar'
+import FloatCart from '../../moleculas/FloatCart'
 import SaleCards from '../../moleculas/SaleCards'
 
-const SaleContainer = styled.div`
+const SaleContainer = styled(motion.div)`
   margin-top: 31px;
   h2 {
     font-weight: bold;
@@ -13,11 +15,14 @@ const SaleContainer = styled.div`
     margin-bottom: 50px;
     text-align: center;
   }
+  .float_container {
+  }
 `
 
 const SaleContent: React.FC = () => {
   return (
     <SaleContainer className="container grid grid-cols-12">
+      <FloatCart />
       <Heading
         level="2"
         className="md:col-start-2 md:col-span-10 lg:col-start-5 lg:col-span-4 col-span-12"
