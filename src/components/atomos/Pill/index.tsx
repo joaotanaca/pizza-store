@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
+import mixin from '../../../styles/mixin'
 
 type TProps = HTMLAttributes<HTMLAnchorElement> & {
   active: boolean
@@ -19,6 +20,10 @@ const PillContainer = styled.a`
     background-color: ${(props) => props.theme.secondary};
     color: #fff;
   }
+  ${mixin.md`
+    padding: 10px 0;
+    width: 50%;
+  `}
 `
 
 const Pill: React.FC<TProps> = ({ children, active, className, ...props }) => {
