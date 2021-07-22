@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Heading from '../../atomos/Heading'
 import CategoriesBar from '../../moleculas/CategoriesBar'
+import SaleCard from '../../moleculas/SaleCard'
 
 const SaleContainer = styled.div`
   margin-top: 31px;
@@ -21,6 +22,7 @@ const SaleContent: React.FC = () => {
         Popular dishes
       </Heading>
       <CategoriesBar />
+      <SaleCard />
     </SaleContainer>
   )
 }
