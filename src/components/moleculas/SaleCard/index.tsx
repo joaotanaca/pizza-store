@@ -57,7 +57,12 @@ const SaleCardContainer = styled.div`
       .cart-button {
         .cart-svg-container {
           &:before {
-            background-color: ${({ theme }) => theme.primary};
+            background: linear-gradient(
+                287.74deg,
+                #f58656 8.52%,
+                #fe5626 92.72%
+              ),
+              linear-gradient(180deg, #fe5626 0%, #f23f0e 100%), #59aaf1;
           }
         }
       }
@@ -69,7 +74,6 @@ const SaleCardContainer = styled.div`
       background-color: #fff;
       border-bottom-left-radius: 150%;
       border-bottom-right-radius: 150%;
-      border-bottom: 4px solid #eceef7;
       .cart-svg-container {
         position: relative;
         transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
@@ -81,6 +85,7 @@ const SaleCardContainer = styled.div`
           width: calc(100% + 20px);
           height: calc(100% + 20px);
           border: 2px solid #eceef6;
+          box-shadow: 0px 4px 8px rgba(205, 71, 41, 0.26);
           background-color: #fff;
           border-radius: 50%;
           z-index: -1;
