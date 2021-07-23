@@ -9,8 +9,7 @@ const FloatContainer = styled(motion.div)`
   place-content: left;
   place-items: left;
   width: 85%;
-  height: 80%;
-  top: 50%;
+  top: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 80;
@@ -38,10 +37,9 @@ const FloatCart: React.FC = () => {
   return (
     <FloatContainer ref={salesContainerRef} className="float_container">
       <FloatCartContainer
-        dragElastic={0}
         dragMomentum={false}
         dragConstraints={salesContainerRef}
-        drag
+        drag="x"
       >
         <FaShoppingBag size={28} color={primary} />
       </FloatCartContainer>

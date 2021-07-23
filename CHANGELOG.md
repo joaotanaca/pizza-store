@@ -1,6 +1,7 @@
 # Changelog
 
 <a name="next"></a>
+
 ## next
 
 ### Added
@@ -12,7 +13,7 @@
 ### Changed
 
 - 💄 ✨ add floating button cart component [[a1c03ae](https://github.com/joaotanaca/pizza-store/commit/a1c03ae4cad3a8667e4b4c2b6cceeb940abb9eed)] (by Tanaca)
-- 💄 replace navbar to _app.tsx [[505445d](https://github.com/joaotanaca/pizza-store/commit/505445dd0e1d7b08efaa36c32da1285facf208d4)] (by Tanaca)
+- 💄 replace navbar to \_app.tsx [[505445d](https://github.com/joaotanaca/pizza-store/commit/505445dd0e1d7b08efaa36c32da1285facf208d4)] (by Tanaca)
 - 📱 🐛 fix reponsive layout [[20e4c9a](https://github.com/joaotanaca/pizza-store/commit/20e4c9a3c920e346db7ae545e87d969a3d1262c9)] (by Tanaca)
 - 💬 🚚 add two data in pizza route api [[6d57bf8](https://github.com/joaotanaca/pizza-store/commit/6d57bf8c6cdf79bc58bef42d8bfb70ba33da1967)] (by Tanaca)
 - 📱 💄 responsive layout for SaleCards [[e690e25](https://github.com/joaotanaca/pizza-store/commit/e690e25a2cd137d5aab462b75b2d4dcf2e225606)] (by Tanaca)
@@ -38,7 +39,6 @@
 - 📝 CHANGELOG [[b3955b3](https://github.com/joaotanaca/pizza-store/commit/b3955b3c33dccc3db03f20521e7fde3529687c02)] (by Tanaca)
 - 💫 💄 add transition to Navbar [[30fbb88](https://github.com/joaotanaca/pizza-store/commit/30fbb881d3733fa6c28442e0941483be1c71d230)] (by Tanaca)
 - 📦 add lib swr [[e10af03](https://github.com/joaotanaca/pizza-store/commit/e10af0378df640ecee4c32afd70d2c56f7c93596)] (by Tanaca)
-
 
 <a name="0.1.0"></a>
 
