@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import React, { useRef } from 'react'
-import { FaShoppingBag } from 'react-icons/fa'
+import { FaPizzaSlice } from 'react-icons/fa'
 import styled, { useTheme } from 'styled-components'
+import { useCart } from '../../../context/cart'
+import Text from '../../atomos/Text'
 
 const FloatContainer = styled(motion.div)`
   position: fixed;
@@ -9,13 +11,15 @@ const FloatContainer = styled(motion.div)`
   place-content: left;
   place-items: left;
   width: 85%;
-  top: 150px;
+  top: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 80;
 `
 
 const FloatCartContainer = styled(motion.div)`
+  position: relative;
+  display: inline-block;
   width: min-content;
   height: min-content;
   background-color: #fff;
@@ -26,6 +30,33 @@ const FloatCartContainer = styled(motion.div)`
   cursor: hand;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  .tooltiptext {
+    width: max-content;
+    background-color: #3f3f3f;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%) rotateZ(180deg);
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent #3f3f3f transparent;
+    }
+  }
   &:active {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
@@ -33,6 +64,7 @@ const FloatCartContainer = styled(motion.div)`
 
 const FloatCart: React.FC = () => {
   const salesContainerRef = useRef(null)
+  const { calc } = useCart()
   const { primary } = useTheme()
   return (
     <FloatContainer ref={salesContainerRef} className="float_container">
@@ -41,7 +73,8 @@ const FloatCart: React.FC = () => {
         dragConstraints={salesContainerRef}
         drag="x"
       >
-        <FaShoppingBag size={28} color={primary} />
+        <Text className="tooltiptext">R$ {calc}</Text>
+        <FaPizzaSlice size={28} color={primary} />
       </FloatCartContainer>
     </FloatContainer>
   )

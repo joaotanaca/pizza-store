@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable camelcase */
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { createContext, useContext, ReactNode } from 'react'
 import { TPizza } from '../../pages/api/pizza'
 import { useFetch } from '../hooks/useFetch'
 
 type TCart = {
+  calc: number
   items: TPizza[]
   pizzas?: TPizza[]
   addCart: (id: string) => void
@@ -22,6 +25,16 @@ export const CartProvider: React.FC = ({
 }) => {
   const { data } = useFetch<TPizza[]>('/api/pizza')
   const [items, setItems] = useState<TPizza[]>([])
+  const [calc, setCalc] = useState<number>(0)
+
+  useEffect(() => {
+    setCalc(
+      Object.values(items).reduce(
+        (accumulator: any | number, { price }) => accumulator + Number(price),
+        0
+      ) as unknown as number
+    )
+  }, [items])
 
   const addCart = (id_param: string) => {
     setItems((prev: TPizza[]) => {
@@ -38,12 +51,10 @@ export const CartProvider: React.FC = ({
     })
   }
 
-  React.useEffect(() => {
-    console.log(items)
-  }, [items])
-
   return (
-    <CartContext.Provider value={{ items, pizzas: data, addCart, removeCart }}>
+    <CartContext.Provider
+      value={{ items, pizzas: data, addCart, removeCart, calc }}
+    >
       {children}
     </CartContext.Provider>
   )

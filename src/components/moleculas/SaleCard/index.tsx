@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import styled, { useTheme } from 'styled-components'
-import { FaCartPlus } from 'react-icons/fa'
+import { VscAdd, VscRemove } from 'react-icons/vsc'
 
 import Text from '../../atomos/Text'
 import { TPizza } from '../../../../pages/api/pizza'
@@ -72,6 +72,7 @@ const SaleCardContainer = styled.div`
       border-bottom: 4px solid #eceef7;
       .cart-svg-container {
         position: relative;
+        transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
         &:before {
           content: '';
           position: absolute;
@@ -83,6 +84,7 @@ const SaleCardContainer = styled.div`
           background-color: #fff;
           border-radius: 50%;
           z-index: -1;
+          transition: all cubic-bezier(0.4, 0, 0.2, 1) 150ms;
         }
       }
     }
@@ -120,7 +122,11 @@ const SaleCard = ({ description, name, price, id }: TPizza) => {
           onClick={handleCart}
         >
           <div className="cart-svg-container">
-            <FaCartPlus size={24} color={findItem ? '#fff' : primary} />
+            {findItem ? (
+              <VscRemove size={24} color="#fff" />
+            ) : (
+              <VscAdd size={24} color={primary} />
+            )}
           </div>
         </motion.button>
       </div>
