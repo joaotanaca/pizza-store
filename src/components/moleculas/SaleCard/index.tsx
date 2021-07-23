@@ -7,6 +7,7 @@ import Text from '../../atomos/Text'
 import { TPizza } from '../../../../pages/api/pizza'
 import mixin from '../../../styles/mixin'
 import { motion } from 'framer-motion'
+import { useCart } from '../../../context/cart'
 
 const SaleCardContainer = styled.div`
   width: calc(25% - 30px);
@@ -52,7 +53,17 @@ const SaleCardContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    &.active {
+      .cart-button {
+        .cart-svg-container {
+          &:before {
+            background-color: ${({ theme }) => theme.primary};
+          }
+        }
+      }
+    }
     .cart-button {
+      cursor: pointer;
       margin: 0 auto;
       padding: 0 14px 14px;
       background-color: #fff;
@@ -64,10 +75,10 @@ const SaleCardContainer = styled.div`
         &:before {
           content: '';
           position: absolute;
-          top: -8px;
-          left: -8.57px;
-          width: calc(100% + 17px);
-          height: calc(100% + 17px);
+          top: -10px;
+          left: -10px;
+          width: calc(100% + 20px);
+          height: calc(100% + 20px);
           border: 2px solid #eceef6;
           background-color: #fff;
           border-radius: 50%;
@@ -78,8 +89,16 @@ const SaleCardContainer = styled.div`
   }
 `
 
-const SaleCard = ({ description, name, price }: TPizza) => {
+const SaleCard = ({ description, name, price, id }: TPizza) => {
+  const { addCart, removeCart, items } = useCart()
   const { primary } = useTheme()
+  const findItem = !!items.find((item) => item.id === id)
+
+  const handleCart = () => {
+    if (!findItem) addCart(id)
+    else removeCart(id)
+  }
+
   return (
     <SaleCardContainer>
       <Image
@@ -94,10 +113,14 @@ const SaleCard = ({ description, name, price }: TPizza) => {
         <Text className="description">{description}</Text>
         <Text className="price">R$ {price}</Text>
       </div>
-      <div className="cart-container">
-        <motion.button className="cart-button" style={{ y: '40%' }}>
+      <div className={`cart-container ${findItem ? 'active' : ''}`}>
+        <motion.button
+          className="cart-button"
+          style={{ y: '40%' }}
+          onClick={handleCart}
+        >
           <div className="cart-svg-container">
-            <FaCartPlus size={24} color={primary} />
+            <FaCartPlus size={24} color={findItem ? '#fff' : primary} />
           </div>
         </motion.button>
       </div>

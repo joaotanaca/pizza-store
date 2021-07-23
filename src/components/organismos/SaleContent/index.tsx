@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Heading from '../../atomos/Heading'
 import CategoriesBar from '../../moleculas/CategoriesBar'

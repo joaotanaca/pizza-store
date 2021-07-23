@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TPizza } from '../../../../pages/api/pizza'
-import { useFetch } from '../../../hooks/useFetch'
+import { useCart } from '../../../context/cart'
 import SaleCard from '../SaleCard'
 
 const SaleCardsContainer = styled.div`
@@ -12,11 +11,11 @@ const SaleCardsContainer = styled.div`
 `
 
 const SaleCards: React.FC = () => {
-  const { data } = useFetch<TPizza[]>('/api/pizza')
+  const { pizzas } = useCart()
   return (
     <SaleCardsContainer className="col-start-2 col-span-10 md:col-start-1 md:col-span-12">
-      {data?.map((props) => (
-        <SaleCard key={props.name} {...props} />
+      {pizzas?.map((props) => (
+        <SaleCard key={props.id} {...props} />
       ))}
     </SaleCardsContainer>
   )
