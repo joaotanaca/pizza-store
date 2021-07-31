@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.js"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,10 +15,11 @@
     "lint": "next lint --fix && yarn prettier -w .",
     "precommit": "yarn lint",
     "prepush": "yarn lint",
-    "test": "jest",
+    "test": "jest -u --passWithNoTests --detectOpenHandles",
     "changelog": "gitmoji-changelog --author"
   },
   "dependencies": {
+    "babel-jest": "^27.0.6",
     "framer-motion": "^4.1.17",
     "next": "11.0.1",
     "react": "17.0.2",
@@ -23,21 +29,30 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.5",
+    "@types/enzyme": "^3.10.9",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.24",
     "@types/react": "17.0.14",
     "@types/styled-components": "^5.1.11",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "autoprefixer": "^10.3.1",
     "babel-plugin-styled-components": "^1.13.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "gitmoji-changelog": "^2.2.1",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
+    "jest-enzyme": "^7.1.2",
     "postcss": "^8.3.5",
     "prettier": "^2.3.2",
     "tailwindcss": "^2.2.4",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.1.0",
     "typescript": "4.3.5"
   }
 }
