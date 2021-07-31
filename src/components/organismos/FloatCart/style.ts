@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion'
-import React, { useRef } from 'react'
-import { FaPizzaSlice } from 'react-icons/fa'
-import styled, { useTheme } from 'styled-components'
-import { useCart } from '../../../context/cart'
-import Text from '../../atomos/Text'
+import styled from 'styled-components'
 
-const FloatContainer = styled(motion.div)`
+export const FloatContainer = styled(motion.div)`
   position: fixed;
   display: flex;
   place-content: left;
@@ -14,10 +10,41 @@ const FloatContainer = styled(motion.div)`
   top: 200px;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 80;
+  z-index: 100;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    display: none;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  &.active {
+    &:after {
+      opacity: 1;
+      display: unset;
+    }
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    .float_cart {
+      max-width: 500px;
+      width: calc(100% - 30px);
+      height: 500px;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
 `
 
-const FloatCartContainer = styled(motion.div)`
+export const FloatCartContainer = styled(motion.div)`
   position: relative;
   display: inline-block;
   width: min-content;
@@ -29,8 +56,10 @@ const FloatCartContainer = styled(motion.div)`
   cursor: pointer;
   cursor: hand;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   .tooltiptext {
+    position: absolute;
     width: max-content;
     background-color: #3f3f3f;
     color: #fff;
@@ -61,23 +90,3 @@ const FloatCartContainer = styled(motion.div)`
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 `
-
-const FloatCart: React.FC = () => {
-  const salesContainerRef = useRef(null)
-  const { calc } = useCart()
-  const { primary } = useTheme()
-  return (
-    <FloatContainer ref={salesContainerRef} className="float_container">
-      <FloatCartContainer
-        dragMomentum={false}
-        dragConstraints={salesContainerRef}
-        drag="x"
-      >
-        <Text className="tooltiptext">R$ {calc}</Text>
-        <FaPizzaSlice size={28} color={primary} />
-      </FloatCartContainer>
-    </FloatContainer>
-  )
-}
-
-export default FloatCart
