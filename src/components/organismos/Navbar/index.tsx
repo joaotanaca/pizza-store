@@ -23,6 +23,7 @@ export const NavbarContainer = styled.nav`
     background-color: transparent;
   }
   .container {
+    background-color: ${({ theme }) => theme.backgroundSales};
     padding-top: 12.5px;
     padding-bottom: 12.5px;
   }

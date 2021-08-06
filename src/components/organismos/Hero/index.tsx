@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 100vh;
   gap: 40px;
   .color {
-    height: 80%;
+    height: 100%;
     background-color: #f0f5fb;
     z-index: -1;
   }
@@ -18,6 +18,7 @@ const Container = styled.div`
     height: 100%;
     background: url('/hero_background.webp') no-repeat bottom;
     background-size: contain;
+    margin-top: 20vh;
     z-index: 1;
     ${mixin.md`
       background-size: cover;
@@ -26,7 +27,7 @@ const Container = styled.div`
   .information-hero {
     position: relative;
     z-index: 2;
-    margin-top: 200px;
+    margin-top: 30vh;
     h1 {
       font-weight: bold;
       font-size: 48px;

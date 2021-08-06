@@ -33,6 +33,7 @@ export const FloatContainer = styled(motion.div)`
     left: 0;
     transform: translate(0);
     .float_cart {
+      background: ${({ theme }) => theme.background};
       max-width: 500px;
       width: calc(100% - 30px);
       height: 500px;
@@ -49,7 +50,7 @@ export const FloatCartContainer = styled(motion.div)`
   display: inline-block;
   width: min-content;
   height: min-content;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.background};
   padding: 11px;
   border-radius: 50%;
   z-index: 80;
