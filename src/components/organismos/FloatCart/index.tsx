@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { useState } from 'react'
 import { FaPizzaSlice } from 'react-icons/fa'
-import { useTheme } from 'styled-components'
 import { useCart } from '../../../context/cart'
 import { useCustomTheme } from '../../../context/theme'
 import Text from '../../atomos/Text'
@@ -28,7 +27,6 @@ const Card = ({ handleClose }: TPropsCard) => {
 const FloatCart: React.FC = () => {
   const salesContainerRef = useRef(null)
   const [active, setActive] = useState(false)
-  const { primary } = useTheme()
   const { calc } = useCart()
 
   return (
@@ -48,7 +46,7 @@ const FloatCart: React.FC = () => {
         ) : (
           <>
             <Text className="tooltiptext">R$ {calc}</Text>
-            <FaPizzaSlice size={28} color={primary} />
+            <FaPizzaSlice size={28} color="#F97242" />
           </>
         )}
       </FloatCartContainer>

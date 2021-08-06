@@ -4,6 +4,7 @@ import { useCart } from '../../../context/cart'
 import SaleCard from '../SaleCard'
 
 const SaleCardsContainer = styled.div`
+  background-color: ${({ theme }) => theme.backgroundSales};
   display: inline-flex;
   flex-flow: row wrap;
   gap: 40px;

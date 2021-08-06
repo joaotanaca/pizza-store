@@ -13,7 +13,7 @@ const SaleCardContainer = styled.div`
   width: calc(25% - 30px);
   border: 2px solid #eceef7;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.backgroundSales};
   margin-bottom: 40px;
   ${mixin.lg`
     width: calc(33% - 30px);
@@ -71,7 +71,7 @@ const SaleCardContainer = styled.div`
       cursor: pointer;
       margin: 0 auto;
       padding: 0 14px 14px;
-      background-color: #fff;
+      background-color: ${({ theme }) => theme.backgroundSales};
       border-bottom-left-radius: 150%;
       border-bottom-right-radius: 150%;
       .cart-svg-container {
@@ -98,7 +98,6 @@ const SaleCardContainer = styled.div`
 
 const SaleCard = ({ description, name, price, id }: TPizza) => {
   const { addCart, removeCart, items } = useCart()
-  const { primary } = useTheme()
   const findItem = !!items.find((item) => item.id === id)
 
   const handleCart = () => {
@@ -130,7 +129,7 @@ const SaleCard = ({ description, name, price, id }: TPizza) => {
             {findItem ? (
               <VscRemove size={24} color="#fff" />
             ) : (
-              <VscAdd size={24} color={primary} />
+              <VscAdd size={24} color="#F97242" />
             )}
           </div>
         </motion.button>

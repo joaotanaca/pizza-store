@@ -19,6 +19,7 @@ interface Theme {
   name: string
   text: string
   background: string
+  backgroundSales: string
   primary: string
   secondary: string
 }

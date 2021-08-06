@@ -8,7 +8,7 @@ type TProps = HTMLAttributes<HTMLAnchorElement> & {
 }
 
 const PillContainer = styled.a`
-  background-color: #eceef6;
+  background-color: ${({ theme }) => theme.background};
   color: ${(props) => props.theme.text};
   border-radius: 45px;
   padding: 17px 40px;
@@ -17,7 +17,7 @@ const PillContainer = styled.a`
   text-align: center;
   &:target,
   &.active {
-    background-color: ${(props) => props.theme.secondary};
+    background-color: ${({ theme }) => theme.secondary};
     color: #fff;
   }
   ${mixin.md`

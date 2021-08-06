@@ -6,7 +6,8 @@ import CategoriesBar from '../../moleculas/CategoriesBar'
 import SaleCards from '../../moleculas/SaleCards'
 
 const SaleContainer = styled(motion.div)`
-  margin-top: 31px;
+  background-color: ${({ theme }) => theme.backgroundSales};
+  margin-top: 20vh !important;
   h2 {
     font-weight: bold;
     font-size: 48px;

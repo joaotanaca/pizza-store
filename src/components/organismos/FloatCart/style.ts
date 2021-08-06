@@ -50,7 +50,7 @@ export const FloatCartContainer = styled(motion.div)`
   display: inline-block;
   width: min-content;
   height: min-content;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.background};
   padding: 11px;
   border-radius: 50%;
   z-index: 80;
